@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqb4pd435oifc"]
+
+[ext_resource type="Script" path="res://StarmapView/StarmapSlide.gd" id="1_id203"]
+[ext_resource type="Texture2D" uid="uid://do0e01cqf04r2" path="res://assets/starmap-slides/test.png" id="2_it5ym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko4xp"]
+
+[node name="StarmapSlide" type="Area2D"]
+script = ExtResource("1_id203")
+slide_texture = ExtResource("2_it5ym")
+correct_position = Vector2(500, 500)
+
+[node name="SlideSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_it5ym")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ko4xp")
+
+[node name="PositionText" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.344781, 0.4898, 0.982511, 1)
+horizontal_alignment = 1
+
+[node name="CorrectText" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.786575, 0.245982, 0.61933, 1)
+vertical_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

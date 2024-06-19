@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cny0ynvnub1wc"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneView.gd" id="1_g41kf"]
+
+[node name="CutsceneView" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g41kf")
+
+[node name="CutsceneImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CutsceneTitle" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="CutsceneDescription" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 39.0
+offset_right = 46.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

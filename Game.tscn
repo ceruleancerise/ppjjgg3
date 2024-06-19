@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bq7tdr6rxklqo"]
+[gd_scene load_steps=4 format=3 uid="uid://bq7tdr6rxklqo"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_dwj37"]
+[ext_resource type="PackedScene" uid="uid://bqb4pd435oifc" path="res://StarmapView/StarmapSlide.tscn" id="2_1p8ha"]
+[ext_resource type="PackedScene" uid="uid://dmtf5xwqa31l0" path="res://StarmapView/Starmap.tscn" id="2_2f5i3"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_dwj37")
+
+[node name="Starmap" parent="." instance=ExtResource("2_2f5i3")]
+
+[node name="StarmapSlide" parent="." instance=ExtResource("2_1p8ha")]
+position = Vector2(381, 375)
+
+[node name="StarmapSlide2" parent="." instance=ExtResource("2_1p8ha")]
+position = Vector2(860, 510)
+
+[node name="StarmapSlide3" parent="." instance=ExtResource("2_1p8ha")]
+position = Vector2(1418, 260)
