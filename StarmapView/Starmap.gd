@@ -1,6 +1,6 @@
-extends Node2D
+extends Control
 
-@onready var map: Sprite2D = $Map
+@onready var map: TextureRect = $Map
 @onready var camera: Camera2D = $Camera
 
 var map_size: Vector2
@@ -25,10 +25,10 @@ func _input(event: InputEvent) -> void:
 # 1 = TOP LEFT / 2 = TOP RIGHT / 3 = BOTTOM LEFT / 4 = BOTTOM RIGHT
 func set_camera_to_quadrant(corner: int) -> void:
 	if (corner == 1):
-		camera.set_global_position(Vector2(-map_size_4th.x, -map_size_4th.y))
+		camera.set_global_position(Vector2(map_size_4th.x, map_size_4th.y))
 	elif (corner == 2):
-		camera.set_global_position(Vector2( map_size_4th.x, -map_size_4th.y))
+		camera.set_global_position(Vector2(map_size_4th.x * 3, map_size_4th.y))
 	elif (corner == 3):
-		camera.set_global_position(Vector2(-map_size_4th.x,  map_size_4th.y))
+		camera.set_global_position(Vector2(map_size_4th.x, map_size_4th.y * 3))
 	elif (corner == 4):
-		camera.set_global_position(Vector2( map_size_4th.x,  map_size_4th.y))
+		camera.set_global_position(Vector2(map_size_4th.x * 3, map_size_4th.y * 3))

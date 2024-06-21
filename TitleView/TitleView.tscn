@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsqw2ue85x4i"]
+
+[ext_resource type="Script" path="res://TitleView/TitleView.gd" id="1_ey6ow"]
+[ext_resource type="Texture2D" uid="uid://dphb33api7hds" path="res://assets/bgs/test.jpg" id="2_r3k07"]
+
+[node name="TitleView" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ey6ow")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_r3k07")

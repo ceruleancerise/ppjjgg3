@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://brnfbx2nev5vw"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrame.gd" id="1_nrbhn"]
+[ext_resource type="Resource" uid="uid://bc7pwc6r5xc6t" path="res://CutsceneView/cutscene_frame_data/Test.tres" id="2_mi654"]
+[ext_resource type="Texture2D" uid="uid://dg8w8kpodjx75" path="res://assets/cutscene-frames/test.jpg" id="3_yrdro"]
+[ext_resource type="FontVariation" uid="uid://b7y2n15qiho02" path="res://themes/FontHeading2.tres" id="4_7oo6o"]
+[ext_resource type="FontVariation" uid="uid://h3sqxdq6vok0" path="res://themes/FontBody.tres" id="5_88mxv"]
+
+[sub_resource type="Gradient" id="Gradient_mvjpr"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.46875, 0.755208, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.698039, 0, 0, 0, 0.284096, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q2j2d"]
+gradient = SubResource("Gradient_mvjpr")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0.667279)
+
+[node name="CutsceneFrame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.000308646
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nrbhn")
+data = ExtResource("2_mi654")
+
+[node name="CutsceneImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_yrdro")
+
+[node name="Gradient" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -0.000255688
+texture = SubResource("GradientTexture2D_q2j2d")
+
+[node name="UI" type="MarginContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="CutsceneText" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Title" type="Label" parent="UI/CutsceneText"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7oo6o")
+theme_override_font_sizes/font_size = 36
+text = "Maggie's Voice"
+
+[node name="Spacer" type="MarginContainer" parent="UI/CutsceneText"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="Description" type="Label" parent="UI/CutsceneText"]
+custom_minimum_size = Vector2(1792, 128)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_88mxv")
+theme_override_font_sizes/font_size = 24
+text = "Have you heard of the critically acclaimed MMORPG Final Fantasy XIV? With an expanded free trial which you can play through the entirety of A Realm Reborn and the award-winning Heavensward expansion up to level 60 for free with no restrictions on playtime.
+"
+autowrap_mode = 3

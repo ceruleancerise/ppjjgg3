@@ -31,8 +31,9 @@ func _input(event: InputEvent) -> void:
 			
 	if (event is InputEventMouseMotion):
 		if (is_dragging):
-			var position = get_global_mouse_position()
-			position_text.set_text(str(position.x) + "\n" + str(position.y))
+			var new_position = get_global_mouse_position() + mouse_offset
+			set_position(new_position)
+			position_text.set_text(str(new_position.x) + "\n" + str(new_position.y))
 			
 func is_position_correct() -> bool:
 	print(get_global_position().distance_to(correct_position))

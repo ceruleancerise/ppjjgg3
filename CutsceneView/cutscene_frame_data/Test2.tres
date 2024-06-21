@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://dlwjrqh5ad0gb"]
+
+[ext_resource type="Texture2D" uid="uid://0q2g2pfb74j" path="res://assets/cutscene-frames/test-2.jpg" id="1_8am41"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_ss73o"]
+
+[resource]
+script = ExtResource("1_ss73o")
+image = ExtResource("1_8am41")
+title = "Second Test Title"
+description = "Here is the dialogue!"
