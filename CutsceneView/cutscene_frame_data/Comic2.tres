@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://dhjcrgakdkl2p"]
+
+[ext_resource type="Texture2D" uid="uid://dt5uesur0ove7" path="res://assets/cutscene-frames/comic-panel-2.png" id="1_bldef"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_f1olr"]
+
+[resource]
+script = ExtResource("1_f1olr")
+image = ExtResource("1_bldef")
+title = ""
+description = ""

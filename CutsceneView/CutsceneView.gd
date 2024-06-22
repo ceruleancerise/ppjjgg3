@@ -14,8 +14,12 @@ var current_frame: CutsceneFrame
 var previous_frame: CutsceneFrame
 var is_transitioning: bool = true
 
+var next_view_id: String
+
 func _ready() -> void:
-	load_frame_data(Global.test_cutscene)
+	if (!!data): 
+		load_frame_data(data.cutscene)
+		next_view_id = data.next_view_id
 
 func load_frame_data(new_data_array: Array[CutsceneFrameData]):
 	data_array = new_data_array
@@ -23,7 +27,10 @@ func load_frame_data(new_data_array: Array[CutsceneFrameData]):
 	advance_frame()
 
 func advance_frame():
-	if (data_array_index >= data_array.size() - 1): return
+	if (data_array_index >= data_array.size() - 1): 
+		end_cutscene()
+		return
+		
 	data_array_index += 1
 	
 	if (!!current_frame):
@@ -31,13 +38,17 @@ func advance_frame():
 	previous_frame = current_frame
 	
 	current_frame = p_CutsceneFrame.instantiate()
-	var data = data_array[data_array_index]
-	current_frame.set_data(data)
+	var new_data = data_array[data_array_index]
+	current_frame.set_data(new_data)
 	current_frame_container.set_modulate(Color(1, 1, 1, 0))
 	current_frame_container.add_child(current_frame)
 
 	is_transitioning = true
 	animation_player.play("frame_crossfade")
+	
+func end_cutscene() -> void:
+	if (!!next_view_id):
+		s_transition_to_view.emit(next_view_id, {})
 
 func _on_advance_button_pressed() -> void:
 	if (is_transitioning): return

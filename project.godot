@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+Views="*res://View/Views.gd"
+Cutscenes="*res://CutsceneView/Cutscenes.gd"
 
 [display]
 
@@ -28,6 +30,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://CutsceneView/cutscene_frame_data/": "blue",
 "res://assets/": "red",
 "res://themes/": "red"
 }

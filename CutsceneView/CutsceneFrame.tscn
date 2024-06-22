@@ -14,7 +14,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.698039, 0, 0, 0, 0.284096, 0, 0
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q2j2d"]
 gradient = SubResource("Gradient_mvjpr")
 fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0.667279)
+fill_to = Vector2(0, 0.799632)
 
 [node name="CutsceneFrame" type="Control"]
 layout_mode = 3
@@ -41,6 +41,7 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 rotation = -0.000255688
+mouse_default_cursor_shape = 2
 texture = SubResource("GradientTexture2D_q2j2d")
 
 [node name="UI" type="MarginContainer" parent="."]
@@ -74,4 +75,6 @@ theme_override_fonts/font = ExtResource("5_88mxv")
 theme_override_font_sizes/font_size = 24
 text = "Have you heard of the critically acclaimed MMORPG Final Fantasy XIV? With an expanded free trial which you can play through the entirety of A Realm Reborn and the award-winning Heavensward expansion up to level 60 for free with no restrictions on playtime.
 "
+horizontal_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 3

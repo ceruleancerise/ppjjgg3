@@ -4,35 +4,53 @@
 [ext_resource type="Texture2D" uid="uid://do0e01cqf04r2" path="res://assets/starmap-slides/test.png" id="2_it5ym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko4xp"]
+size = Vector2(256, 256)
 
-[node name="StarmapSlide" type="Area2D"]
+[node name="StarmapSlide" type="Sprite2D"]
+texture = ExtResource("2_it5ym")
 script = ExtResource("1_id203")
-slide_texture = ExtResource("2_it5ym")
 correct_position = Vector2(500, 500)
 
-[node name="SlideSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_it5ym")
+[node name="Area" type="Area2D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="Area"]
 shape = SubResource("RectangleShape2D_ko4xp")
 
 [node name="PositionText" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_top = -128.0
+offset_right = -60.5
+offset_bottom = 8.0
 grow_horizontal = 2
-grow_vertical = 2
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.344781, 0.4898, 0.982511, 1)
+theme_override_constants/line_spacing = -40
+theme_override_font_sizes/font_size = 64
+text = "999
+999"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CorrectText" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -227.5
+offset_top = -178.0
+offset_right = -28.5
+offset_bottom = -128.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.786575, 0.245982, 0.61933, 1)
-vertical_alignment = 2
+theme_override_font_sizes/font_size = 36
+text = "INCORRECT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Area" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area" to="." method="_on_mouse_exited"]

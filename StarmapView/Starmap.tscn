@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmtf5xwqa31l0"]
+[gd_scene load_steps=10 format=3 uid="uid://dmtf5xwqa31l0"]
 
 [ext_resource type="Script" path="res://StarmapView/Starmap.gd" id="1_ejwod"]
-[ext_resource type="Texture2D" uid="uid://dn6rpw682r2v" path="res://assets/starmap/map.png" id="2_lon55"]
-[ext_resource type="Texture2D" uid="uid://djgxousomk3nu" path="res://assets/starmap/map-overlay.png" id="3_ydb1e"]
+[ext_resource type="Texture2D" uid="uid://djhv1br5ork3e" path="res://assets/starmap/map-destroyed.png" id="2_v55mf"]
+[ext_resource type="Texture2D" uid="uid://md4ae8wdj50a" path="res://assets/starmap/journal-desk.png" id="3_cvnni"]
+[ext_resource type="Texture2D" uid="uid://qll8sk5mxmy5" path="res://assets/starmap/brochure-desk.png" id="4_2rb1s"]
+[ext_resource type="Texture2D" uid="uid://da2ra8hc0mx4g" path="res://assets/starmap/photo-desk.png" id="5_rtrju"]
+[ext_resource type="Texture2D" uid="uid://d0ad4osh46fd" path="res://assets/starmap/tickets-desk.png" id="6_ero65"]
+[ext_resource type="PackedScene" uid="uid://bqb4pd435oifc" path="res://StarmapView/StarmapSlide.tscn" id="7_miln0"]
+[ext_resource type="Texture2D" uid="uid://x0a6mahx5cmj" path="res://assets/starmap-slides/ice-cream-1.PNG" id="8_iogy1"]
+[ext_resource type="Texture2D" uid="uid://wofjigpix7fv" path="res://assets/starmap-slides/ice-cream-2.PNG" id="9_pefxs"]
 
 [node name="Starmap" type="Control"]
 layout_mode = 3
@@ -12,12 +18,100 @@ script = ExtResource("1_ejwod")
 
 [node name="Map" type="TextureRect" parent="."]
 layout_mode = 0
-texture = ExtResource("2_lon55")
-
-[node name="MapOverlay" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 3840.0
-offset_bottom = 2160.0
-texture = ExtResource("3_ydb1e")
+mouse_filter = 2
+texture = ExtResource("2_v55mf")
 
 [node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
+
+[node name="Props" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="Quad1Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("3_cvnni")
+
+[node name="Open" type="Button" parent="Props/Quad1Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 725)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 537.0
+offset_bottom = 783.0
+rotation = -0.0942478
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad2Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("4_2rb1s")
+
+[node name="Open" type="Button" parent="Props/Quad2Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(317, 759)
+layout_mode = 0
+offset_left = 1424.0
+offset_top = 76.0
+offset_right = 1741.0
+offset_bottom = 835.0
+rotation = -0.10821
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad3Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("5_rtrju")
+
+[node name="Open" type="Button" parent="Props/Quad3Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(449, 473)
+layout_mode = 0
+offset_left = 70.0
+offset_top = 528.0
+offset_right = 519.0
+offset_bottom = 1001.0
+rotation = -0.10821
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad4Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("6_ero65")
+
+[node name="Open" type="Button" parent="Props/Quad4Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(552, 296)
+layout_mode = 0
+offset_left = 1281.0
+offset_top = 728.0
+offset_right = 1833.0
+offset_bottom = 1024.0
+rotation = -0.10472
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Slides" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StarmapSlide" parent="Slides" instance=ExtResource("7_miln0")]
+position = Vector2(1385, 317)
+texture = ExtResource("8_iogy1")
+
+[node name="StarmapSlide2" parent="Slides" instance=ExtResource("7_miln0")]
+position = Vector2(1351, 747)
+texture = ExtResource("9_pefxs")
+
+[connection signal="pressed" from="Props/Quad1Prop/Open" to="." method="_on_prop_1_pressed"]
+[connection signal="pressed" from="Props/Quad2Prop/Open" to="." method="_on_prop_2_pressed"]
+[connection signal="pressed" from="Props/Quad3Prop/Open" to="." method="_on_prop_3_pressed"]
+[connection signal="pressed" from="Props/Quad4Prop/Open" to="." method="_on_prop_4_pressed"]
