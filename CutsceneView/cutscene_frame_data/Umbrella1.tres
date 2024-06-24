@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://cq4qgdqmmhepr"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_40ehd"]
+[ext_resource type="Texture2D" uid="uid://bejtxrdhadrhb" path="res://assets/starmap/photo.png" id="1_o0i1d"]
+
+[resource]
+script = ExtResource("1_40ehd")
+image = ExtResource("1_o0i1d")
+title = ""
+description = "After that, we took a trip together every summer."

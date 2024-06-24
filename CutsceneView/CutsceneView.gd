@@ -1,4 +1,6 @@
-extends View
+class_name CutsceneView extends View
+
+signal s_cutscene_done()
 
 @onready var previous_frame_container: Control = $PreviousFrameContainer
 @onready var current_frame_container: Control = $CurrentFrameContainer
@@ -47,6 +49,7 @@ func advance_frame():
 	animation_player.play("frame_crossfade")
 	
 func end_cutscene() -> void:
+	s_cutscene_done.emit()
 	if (!!next_view_id):
 		s_transition_to_view.emit(next_view_id, {})
 

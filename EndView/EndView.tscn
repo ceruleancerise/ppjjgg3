@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b58swioxa62f"]
+
+[ext_resource type="Script" path="res://EndView/EndView.gd" id="1_a1frh"]
+[ext_resource type="Texture2D" uid="uid://dc0n4yh2gvod6" path="res://assets/bgs/end.png" id="2_g72yi"]
+[ext_resource type="Texture2D" uid="uid://bl723pnoqybeq" path="res://assets/blank.png" id="2_pbwh8"]
+
+[node name="EndView" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a1frh")
+id = "END"
+
+[node name="EndImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_g72yi")
+
+[node name="AdvanceButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_pbwh8")
+
+[connection signal="pressed" from="AdvanceButton" to="." method="_on_advance_button_pressed"]

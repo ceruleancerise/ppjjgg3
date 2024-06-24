@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://s78f551xg73d"]
+
+[ext_resource type="Texture2D" uid="uid://vm16s0u0gnw8" path="res://assets/starmap/journal.png" id="1_gww5p"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_0cbga"]
+
+[resource]
+script = ExtResource("2_0cbga")
+image = ExtResource("1_gww5p")
+title = ""
+description = "Our father tried to teach us about the constellations, but we thought it was so silly that none of the stars looked like what he said they were."

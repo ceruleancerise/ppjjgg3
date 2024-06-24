@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://bjjwh7q3ywu58"]
+
+[ext_resource type="Texture2D" uid="uid://bejtxrdhadrhb" path="res://assets/starmap/photo.png" id="1_acgcr"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_s5gfk"]
+
+[resource]
+script = ExtResource("1_s5gfk")
+image = ExtResource("1_acgcr")
+title = ""
+description = "I miss you, Nan."

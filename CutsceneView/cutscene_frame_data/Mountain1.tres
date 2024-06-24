@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://drgblu27oguls"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_0drrw"]
+[ext_resource type="Texture2D" uid="uid://bj788sky7snvd" path="res://assets/starmap/brochure.png" id="1_uqbms"]
+
+[resource]
+script = ExtResource("1_0drrw")
+image = ExtResource("1_uqbms")
+title = ""
+description = "Dad gave up on trying to teach us the real constellations."

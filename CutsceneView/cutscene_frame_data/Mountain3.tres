@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://bqq077mjm0hge"]
+
+[ext_resource type="Texture2D" uid="uid://bj788sky7snvd" path="res://assets/starmap/brochure.png" id="1_55km0"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_f8gks"]
+
+[resource]
+script = ExtResource("2_f8gks")
+image = ExtResource("1_55km0")
+title = ""
+description = "We were twelve and fourteen when he packed us up and took us on a stargazing tour in the mountains."

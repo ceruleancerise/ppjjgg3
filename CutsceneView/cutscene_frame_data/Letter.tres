@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://c635dkbscojrx"]
+
+[ext_resource type="Texture2D" uid="uid://dy40l2t6wa4s4" path="res://assets/starmap/letter.png" id="1_624o6"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_dikkw"]
+
+[resource]
+script = ExtResource("1_dikkw")
+image = ExtResource("1_624o6")
+title = ""
+description = "... It's a letter from Nan."

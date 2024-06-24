@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://bf60xlfydmsak"]
+
+[ext_resource type="Texture2D" uid="uid://bejtxrdhadrhb" path="res://assets/starmap/photo.png" id="1_mcej5"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_8246f"]
+
+[resource]
+script = ExtResource("2_8246f")
+image = ExtResource("1_mcej5")
+title = ""
+description = "I’m so glad you still found a way to remind me about the ones we’ve already taken."

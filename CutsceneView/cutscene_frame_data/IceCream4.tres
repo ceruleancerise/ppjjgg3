@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://0dixwoyx3xby"]
+
+[ext_resource type="Texture2D" uid="uid://vm16s0u0gnw8" path="res://assets/starmap/journal.png" id="1_mj2fk"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_ybdcd"]
+
+[resource]
+script = ExtResource("2_ybdcd")
+image = ExtResource("1_mj2fk")
+title = ""
+description = "We had gone to Coney Island on this trip. We found an ice cream cone!"
