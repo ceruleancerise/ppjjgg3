@@ -26,6 +26,7 @@ grow_vertical = 2
 rotation = 0.000308646
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 script = ExtResource("1_nrbhn")
 data = ExtResource("2_mi654")
 
@@ -33,6 +34,7 @@ data = ExtResource("2_mi654")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture = ExtResource("3_yrdro")
 
 [node name="Gradient" type="TextureRect" parent="."]
@@ -78,3 +80,6 @@ text = "Have you heard of the critically acclaimed MMORPG Final Fantasy XIV? Wit
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0

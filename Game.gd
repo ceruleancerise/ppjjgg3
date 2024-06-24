@@ -1,5 +1,6 @@
 extends Node
 
+@onready var background: TextureRect = $Background
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var current_view_container: Control = $CurrentViewContainer
 @onready var previous_view_container: Control = $PreviousViewContainer
@@ -25,4 +26,5 @@ func transition_to_view(view_id: String, data: Variant) -> void:
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "crossfade"):
+		background.set_visible(true)
 		if (!!previous_view): previous_view.queue_free()

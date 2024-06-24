@@ -14,5 +14,6 @@ mouse_filter = 1
 script = ExtResource("1_2bqff")
 
 [node name="Starmap" parent="." instance=ExtResource("2_0eqr3")]
+mouse_filter = 1
 
 [connection signal="s_game_over" from="Starmap" to="." method="_on_game_over"]

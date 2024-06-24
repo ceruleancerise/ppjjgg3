@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://7h7lnp3ey41p"]
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=4 format=3 uid="uid://7h7lnp3ey41p"]
 
 [ext_resource type="Texture2D" uid="uid://vm16s0u0gnw8" path="res://assets/starmap/journal.png" id="1_1x3bt"]
 [ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_dp5cs"]
+[ext_resource type="AudioStream" uid="uid://c573s3o4h0s4h" path="res://assets/sfx/page-1.mp3" id="3_jougg"]
 
 [resource]
 script = ExtResource("1_dp5cs")
 image = ExtResource("1_1x3bt")
 title = ""
 description = "We started keeping this diary together when we were children…"
+sound_effect = ExtResource("3_jougg")

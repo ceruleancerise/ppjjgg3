@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bq7tdr6rxklqo"]
+[gd_scene load_steps=19 format=3 uid="uid://bq7tdr6rxklqo"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_dwj37"]
 [ext_resource type="Texture2D" uid="uid://bl723pnoqybeq" path="res://assets/blank.png" id="2_p5yvf"]
+[ext_resource type="Texture2D" uid="uid://cq8tvhr46gr8o" path="res://assets/bgs/acorn-jelly.png" id="2_qbina"]
 [ext_resource type="Texture2D" uid="uid://buc7i2tag8773" path="res://assets/loading/frame-1.png" id="3_ia6la"]
 [ext_resource type="Texture2D" uid="uid://bwexcuvcfyn6p" path="res://assets/cutscene-frames/comic-panel-4.png" id="3_yruq7"]
 [ext_resource type="Texture2D" uid="uid://dhgaqq4hwevdg" path="res://assets/loading/frame-2.png" id="4_7u2jq"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cx0p8wwbhdtrs" path="res://assets/loading/frame-6.png" id="8_h4gqe"]
 [ext_resource type="Texture2D" uid="uid://w6lfwpc3btwd" path="res://assets/loading/frame-7.png" id="9_jseyx"]
 [ext_resource type="FontVariation" uid="uid://h3sqxdq6vok0" path="res://themes/FontBody.tres" id="10_4l303"]
+[ext_resource type="AudioStream" uid="uid://bymsudurp3x4s" path="res://assets/music/acrossthestars.mp3" id="14_aaex0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8cki"]
 animations = [{
@@ -153,7 +155,13 @@ _data = {
 [node name="Game" type="Node2D"]
 script = ExtResource("1_dwj37")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qbina")
+
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_p5yvf")
@@ -178,6 +186,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.913725, 0.886275, 0.776471, 1)
 theme_override_fonts/font = ExtResource("10_4l303")
 theme_override_font_sizes/font_size = 24
 text = "
@@ -192,6 +201,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="Test" type="TextureRect" parent="CurrentViewContainer"]
 visible = false
@@ -218,5 +228,10 @@ libraries = {
 "": SubResource("AnimationLibrary_gh33t")
 }
 speed_scale = 0.333
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_aaex0")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

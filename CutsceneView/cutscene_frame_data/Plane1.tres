@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://cute2ujdtyc5j"]
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=4 format=3 uid="uid://cute2ujdtyc5j"]
 
 [ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_8iugc"]
 [ext_resource type="Texture2D" uid="uid://dp76k0locb6c5" path="res://assets/starmap/ticket.png" id="1_uoi67"]
+[ext_resource type="AudioStream" uid="uid://dkg86oec65poa" path="res://assets/sfx/page-4.mp3" id="3_p5k5p"]
 
 [resource]
 script = ExtResource("1_8iugc")
 image = ExtResource("1_uoi67")
 title = ""
 description = "Our first trip with just us, and our first time flying!"
+sound_effect = ExtResource("3_p5k5p")

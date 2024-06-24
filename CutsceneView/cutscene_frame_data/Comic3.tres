@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://31lp3c763lvd"]
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=4 format=3 uid="uid://31lp3c763lvd"]
 
 [ext_resource type="Texture2D" uid="uid://ck6v7k3bbrkdw" path="res://assets/cutscene-frames/comic-panel-3.png" id="1_2rplm"]
 [ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_oy8nk"]
+[ext_resource type="AudioStream" uid="uid://dm4mx51up2p2v" path="res://assets/sfx/footsteps.mp3" id="3_vrdur"]
 
 [resource]
 script = ExtResource("1_oy8nk")
 image = ExtResource("1_2rplm")
 title = ""
-description = "\"Just like her to leave a mess...\""
+description = "Just like her to leave a mess..."
+sound_effect = ExtResource("3_vrdur")
