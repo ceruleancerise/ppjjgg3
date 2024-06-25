@@ -47,5 +47,8 @@ var ENDING: Array[CutsceneFrameData] = [
 ]
 
 var LETTER: Array[CutsceneFrameData] = [
-	load("res://CutsceneView/cutscene_frame_data/Letter.tres")
+	load("res://CutsceneView/cutscene_frame_data/Letter1.tres"),
+	load("res://CutsceneView/cutscene_frame_data/Letter2.tres"),
+	load("res://CutsceneView/cutscene_frame_data/Letter3.tres"),
+	load("res://CutsceneView/cutscene_frame_data/Letter4.tres")
 ]

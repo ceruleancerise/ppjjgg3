@@ -1,58 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqb4pd435oifc"]
+[gd_scene load_steps=6 format=3 uid="uid://bqb4pd435oifc"]
 
 [ext_resource type="Script" path="res://StarmapView/StarmapSlide.gd" id="1_id203"]
 [ext_resource type="Texture2D" uid="uid://do0e01cqf04r2" path="res://assets/starmap-slides/test.png" id="2_it5ym"]
+[ext_resource type="FontVariation" uid="uid://h3sqxdq6vok0" path="res://themes/FontBody.tres" id="3_3i3ou"]
+[ext_resource type="AudioStream" uid="uid://bpnylbf5pke46" path="res://assets/sfx/ding.wav" id="4_bodr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko4xp"]
 size = Vector2(256, 256)
 
 [node name="StarmapSlide" type="Sprite2D"]
+z_index = 10
 texture = ExtResource("2_it5ym")
 script = ExtResource("1_id203")
 correct_position = Vector2(500, 500)
 
 [node name="Area" type="Area2D" parent="."]
+z_index = 30
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Area"]
 shape = SubResource("RectangleShape2D_ko4xp")
 
 [node name="PositionText" type="Label" parent="."]
 visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -195.5
-offset_top = -128.0
-offset_right = -60.5
-offset_bottom = 8.0
-grow_horizontal = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -264.0
+offset_right = 7.0
+offset_bottom = -128.0
+grow_vertical = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.344781, 0.4898, 0.982511, 1)
-theme_override_constants/line_spacing = -40
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("3_3i3ou")
 theme_override_font_sizes/font_size = 18
 text = "999
 999"
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="CorrectText" type="Label" parent="."]
 visible = false
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -227.5
-offset_top = -178.0
-offset_right = -28.5
+offset_left = -327.0
+offset_top = -179.0
+offset_right = -128.0
 offset_bottom = -128.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.786575, 0.245982, 0.61933, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("3_3i3ou")
 theme_override_font_sizes/font_size = 18
 text = "INCORRECT"
-horizontal_alignment = 1
-vertical_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bodr0")
+volume_db = -15.0
 
 [connection signal="mouse_entered" from="Area" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area" to="." method="_on_mouse_exited"]

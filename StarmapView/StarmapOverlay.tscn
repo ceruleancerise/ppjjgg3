@@ -101,6 +101,7 @@ _data = {
 }
 
 [node name="StarmapOverlay" type="Control"]
+z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15

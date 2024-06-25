@@ -7,6 +7,7 @@ signal s_game_over()
 @onready var props: Control = $Props
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var intro_letter: TextureButton = $IntroLetter
+@onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
 @onready var quad_1_slides: Array[StarmapSlide] = [
 	$Slides/Quad1Slides/Slide1,
@@ -79,15 +80,19 @@ func check_quadrant_completion(selected_slide: StarmapSlide) -> void:
 		if (quadrant == 1):
 			slides[1] = []
 			animation_player.play("quad_1_complete")
+			audio_player.play()
 		elif (quadrant == 2):
 			slides[2] = []
 			animation_player.play("quad_2_complete")
+			audio_player.play()
 		elif (quadrant == 4):
 			slides[4] = []
 			animation_player.play("quad_4_complete")
+			audio_player.play()
 		elif (quadrant == 3):
 			slides[3] = []
 			animation_player.play("quad_3_complete")
+			audio_player.play()
 
 func quadrant_to_corner_position(quadrant: int) -> Vector2:
 	if (quadrant == 1):
@@ -136,11 +141,11 @@ func display_overlay(quadrant: int) -> void:
 		overlay.connect("s_overlay_closed", play_ending_2)
 	
 	if (quadrant == 6):
+		overlay.connect("s_overlay_closed", func(): display_overlay(1) )
 		intro_letter.queue_free()
 		
 func on_overlay_closed() -> void:
 	display_props(true)
-	#overlay.queue_free()
 
 func _on_prop_1_pressed() -> void:
 	display_overlay(1)
@@ -164,10 +169,13 @@ func play_ending_2() -> void:
 func _on_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "quad_1_complete"):
 		set_quadrant(2)
+		display_overlay(2)
 	if (anim_name == "quad_2_complete"):
 		set_quadrant(4)
+		display_overlay(4)
 	if (anim_name == "quad_4_complete"):
 		set_quadrant(3)
+		display_overlay(3)
 	if (anim_name == "quad_3_complete"):
 		play_ending()
 	if (anim_name == "ending"):

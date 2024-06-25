@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dmtf5xwqa31l0"]
+[gd_scene load_steps=36 format=3 uid="uid://dmtf5xwqa31l0"]
 
 [ext_resource type="Script" path="res://StarmapView/Starmap.gd" id="1_ejwod"]
 [ext_resource type="Texture2D" uid="uid://djhv1br5ork3e" path="res://assets/starmap/map-destroyed.png" id="2_v55mf"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dx3kud56fcy15" path="res://assets/starmap-slides/herring-7.PNG" id="24_i0ic2"]
 [ext_resource type="Texture2D" uid="uid://dsaxlquvil5vp" path="res://assets/starmap-slides/herring-8.PNG" id="25_d0uno"]
 [ext_resource type="Texture2D" uid="uid://bpf2ly06e1s4e" path="res://assets/starmap/envelope.png" id="26_om3oq"]
+[ext_resource type="AudioStream" uid="uid://cfmrp13hrkq5s" path="res://assets/sfx/shimmer.wav" id="27_772cg"]
 
 [sub_resource type="Animation" id="Animation_y6hpj"]
 length = 0.001
@@ -434,44 +435,52 @@ offset_bottom = 40.0
 mouse_filter = 1
 
 [node name="Herring1" parent="Herrings" instance=ExtResource("7_miln0")]
-position = Vector2(514, 849)
+position = Vector2(1587, 844)
 texture = ExtResource("18_8lpea")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring2" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(1443, 377)
 texture = ExtResource("19_4gmri")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring3" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(2475, 339)
 texture = ExtResource("20_m3m3d")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring4" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(2137, 884)
 texture = ExtResource("21_ieif8")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring5" parent="Herrings" instance=ExtResource("7_miln0")]
-position = Vector2(1384, 1756)
+position = Vector2(1422, 1808)
 texture = ExtResource("22_81wjq")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring6" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(724, 1410)
 texture = ExtResource("23_m3cf0")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring7" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(2776, 1294)
 texture = ExtResource("24_i0ic2")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Herring8" parent="Herrings" instance=ExtResource("7_miln0")]
 position = Vector2(2961, 1809)
 texture = ExtResource("25_d0uno")
 correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
 
 [node name="Slides" type="Control" parent="."]
 layout_mode = 1
@@ -495,7 +504,7 @@ correct_position = Vector2(798, 549)
 quadrant = 1
 
 [node name="Slide2" parent="Slides/Quad1Slides" instance=ExtResource("7_miln0")]
-position = Vector2(293, 747)
+position = Vector2(784, 199)
 texture = ExtResource("9_pefxs")
 correct_position = Vector2(1187, 702)
 quadrant = 1
@@ -528,6 +537,7 @@ mouse_filter = 1
 position = Vector2(872, 1913)
 texture = ExtResource("12_5mvsu")
 correct_position = Vector2(700, 1501)
+correct_rotation = 3
 quadrant = 3
 
 [node name="Slide2" parent="Slides/Quad3Slides" instance=ExtResource("7_miln0")]
@@ -537,7 +547,7 @@ correct_position = Vector2(906, 1507)
 quadrant = 3
 
 [node name="Slide3" parent="Slides/Quad3Slides" instance=ExtResource("7_miln0")]
-position = Vector2(1670, 1392)
+position = Vector2(1612, 1352)
 texture = ExtResource("14_bhdrn")
 correct_position = Vector2(1073, 1840)
 quadrant = 3
@@ -567,15 +577,20 @@ correct_position = Vector2(3083, 1606)
 quadrant = 4
 
 [node name="IntroLetter" type="TextureButton" parent="."]
+z_index = 20
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture_normal = ExtResource("26_om3oq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8e7uh")
 }
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_772cg")
+volume_db = -10.0
 
 [connection signal="pressed" from="Props/Quad1Prop/Open" to="." method="_on_prop_1_pressed"]
 [connection signal="pressed" from="Props/Quad2Prop/Open" to="." method="_on_prop_2_pressed"]
