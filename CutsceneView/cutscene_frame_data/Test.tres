@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrame" load_steps=3 format=3 uid="uid://bc7pwc6r5xc6t"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_0wt5k"]
+[ext_resource type="Texture2D" uid="uid://dg8w8kpodjx75" path="res://assets/cutscene-frames/test.jpg" id="1_b22yu"]
+
+[resource]
+script = ExtResource("1_0wt5k")
+image = ExtResource("1_b22yu")
+title = "Speaker"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula nisl non est varius suscipit. Quisque vitae nulla purus. Sed porttitor felis quam, nec vulputate quam interdum ut. Mauris a justo sem. Curabitur vel vehicula risus. Suspendisse mattis metus est, id sodales ipsum blandit et. Nunc interdum ac magna nec accumsan. Integer sed tortor tellus."

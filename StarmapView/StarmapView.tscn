@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxkmahr4tv4os"]
+
+[ext_resource type="Script" path="res://StarmapView/StarmapView.gd" id="1_2bqff"]
+[ext_resource type="PackedScene" uid="uid://dmtf5xwqa31l0" path="res://StarmapView/Starmap.tscn" id="2_0eqr3"]
+
+[node name="StarmapView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_2bqff")
+
+[node name="Starmap" parent="." instance=ExtResource("2_0eqr3")]
+mouse_filter = 1
+
+[connection signal="s_game_over" from="Starmap" to="." method="_on_game_over"]

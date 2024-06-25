@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b7y2n15qiho02"]
+
+[ext_resource type="FontFile" uid="uid://ba0yhjx4ij1p7" path="res://assets/fonts/Newsreader-Variable.ttf" id="1_hempo"]
+
+[resource]
+base_font = ExtResource("1_hempo")
+variation_opentype = {
+1869640570: 6,
+2003265652: 600
+}
+spacing_glyph = 2

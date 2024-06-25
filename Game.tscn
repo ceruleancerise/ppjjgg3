@@ -1,0 +1,237 @@
+[gd_scene load_steps=19 format=3 uid="uid://bq7tdr6rxklqo"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_dwj37"]
+[ext_resource type="Texture2D" uid="uid://bl723pnoqybeq" path="res://assets/blank.png" id="2_p5yvf"]
+[ext_resource type="Texture2D" uid="uid://cq8tvhr46gr8o" path="res://assets/bgs/acorn-jelly.png" id="2_qbina"]
+[ext_resource type="Texture2D" uid="uid://buc7i2tag8773" path="res://assets/loading/frame-1.png" id="3_ia6la"]
+[ext_resource type="Texture2D" uid="uid://bwexcuvcfyn6p" path="res://assets/cutscene-frames/comic-panel-4.png" id="3_yruq7"]
+[ext_resource type="Texture2D" uid="uid://dhgaqq4hwevdg" path="res://assets/loading/frame-2.png" id="4_7u2jq"]
+[ext_resource type="Texture2D" uid="uid://bq5kf1a2t0h0o" path="res://assets/bgs/title.png" id="4_ml7jm"]
+[ext_resource type="Texture2D" uid="uid://cg3lofq74ar8w" path="res://assets/loading/frame-3.png" id="5_ybv6o"]
+[ext_resource type="Texture2D" uid="uid://bo2y8rj6weugn" path="res://assets/loading/frame-4.png" id="6_oljo8"]
+[ext_resource type="Texture2D" uid="uid://cas4vj4w3rfqc" path="res://assets/loading/frame-5.png" id="7_u6c8d"]
+[ext_resource type="Texture2D" uid="uid://cx0p8wwbhdtrs" path="res://assets/loading/frame-6.png" id="8_h4gqe"]
+[ext_resource type="Texture2D" uid="uid://w6lfwpc3btwd" path="res://assets/loading/frame-7.png" id="9_jseyx"]
+[ext_resource type="FontVariation" uid="uid://h3sqxdq6vok0" path="res://themes/FontBody.tres" id="10_4l303"]
+[ext_resource type="AudioStream" uid="uid://bymsudurp3x4s" path="res://assets/music/acrossthestars.mp3" id="14_aaex0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8cki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ia6la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7u2jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ybv6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oljo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u6c8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h4gqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jseyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_gij78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentViewContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PreviousViewContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CurrentViewContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PreviousViewContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_doktb"]
+resource_name = "crossfade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurrentViewContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 0.25, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PreviousViewContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(6, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("CurrentViewContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.9, 1),
+"transitions": PackedFloat32Array(1, 0.125, 1, 1),
+"update": 0,
+"values": [Vector2(-1920, 0), Vector2(-1920, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("PreviousViewContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1),
+"transitions": PackedFloat32Array(1, 6, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1920, 0), Vector2(1920, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gh33t"]
+_data = {
+"RESET": SubResource("Animation_gij78"),
+"crossfade": SubResource("Animation_doktb")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_dwj37")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qbina")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_p5yvf")
+
+[node name="LoadingIndicator" type="AnimatedSprite2D" parent="Background"]
+sprite_frames = SubResource("SpriteFrames_g8cki")
+autoplay = "default"
+frame_progress = 0.28803
+speed_scale = 1.5
+offset = Vector2(960, 540)
+
+[node name="LoadingText" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.913725, 0.886275, 0.776471, 1)
+theme_override_fonts/font = ExtResource("10_4l303")
+theme_override_font_sizes/font_size = 24
+text = "
+
+
+
+
+Loading..."
+
+[node name="CurrentViewContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Test" type="TextureRect" parent="CurrentViewContainer"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_yruq7")
+
+[node name="PreviousViewContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0002
+offset_bottom = 40.0
+
+[node name="Test" type="TextureRect" parent="PreviousViewContainer"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_ml7jm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gh33t")
+}
+speed_scale = 0.333
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_aaex0")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

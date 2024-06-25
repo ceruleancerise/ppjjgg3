@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://bmjppnlgicgke"]
+
+[ext_resource type="Texture2D" uid="uid://bejtxrdhadrhb" path="res://assets/starmap/photo.png" id="1_7rdf6"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_l2d6j"]
+
+[resource]
+script = ExtResource("2_l2d6j")
+image = ExtResource("1_7rdf6")
+title = ""
+description = " It feels strange to spend this summer packing up your things instead of planning our next adventure."

@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://h3sqxdq6vok0"]
+
+[ext_resource type="FontFile" uid="uid://ba0yhjx4ij1p7" path="res://assets/fonts/Newsreader-Variable.ttf" id="1_acm1r"]
+
+[resource]
+base_font = ExtResource("1_acm1r")
+variation_opentype = {
+1869640570: 6,
+2003265652: 500
+}
+spacing_top = 16

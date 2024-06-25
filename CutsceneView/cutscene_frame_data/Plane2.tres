@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://dupd2o1aoeujt"]
+
+[ext_resource type="Texture2D" uid="uid://dp76k0locb6c5" path="res://assets/starmap/ticket.png" id="1_wutsq"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_uspc1"]
+
+[resource]
+script = ExtResource("2_uspc1")
+image = ExtResource("1_wutsq")
+title = ""
+description = "I didn’t want to look out the window, but Nan couldn’t keep her eyes off the clouds."

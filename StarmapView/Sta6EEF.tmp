@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqb4pd435oifc"]
+
+[ext_resource type="Script" path="res://StarmapView/StarmapSlide.gd" id="1_id203"]
+[ext_resource type="Texture2D" uid="uid://do0e01cqf04r2" path="res://assets/starmap-slides/test.png" id="2_it5ym"]
+
+[node name="StarmapSlide" type="Node2D"]
+script = ExtResource("1_id203")
+
+[node name="SlideImage" type="Sprite2D" parent="."]
+texture = ExtResource("2_it5ym")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://cs37ak4aqmu4s"]
+
+[ext_resource type="Texture2D" uid="uid://dy40l2t6wa4s4" path="res://assets/starmap/letter.png" id="1_iaw2p"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_blstf"]
+
+[resource]
+script = ExtResource("2_blstf")
+image = ExtResource("1_iaw2p")
+title = ""
+description = "Perhaps her diary could provide some clues?"

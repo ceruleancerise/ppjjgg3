@@ -1,0 +1,600 @@
+[gd_scene load_steps=36 format=3 uid="uid://dmtf5xwqa31l0"]
+
+[ext_resource type="Script" path="res://StarmapView/Starmap.gd" id="1_ejwod"]
+[ext_resource type="Texture2D" uid="uid://djhv1br5ork3e" path="res://assets/starmap/map-destroyed.png" id="2_v55mf"]
+[ext_resource type="Texture2D" uid="uid://md4ae8wdj50a" path="res://assets/starmap/journal-desk.png" id="3_cvnni"]
+[ext_resource type="Texture2D" uid="uid://qll8sk5mxmy5" path="res://assets/starmap/brochure-desk.png" id="4_2rb1s"]
+[ext_resource type="Texture2D" uid="uid://da2ra8hc0mx4g" path="res://assets/starmap/photo-desk.png" id="5_rtrju"]
+[ext_resource type="Texture2D" uid="uid://d0ad4osh46fd" path="res://assets/starmap/tickets-desk.png" id="6_ero65"]
+[ext_resource type="PackedScene" uid="uid://bqb4pd435oifc" path="res://StarmapView/StarmapSlide.tscn" id="7_miln0"]
+[ext_resource type="Texture2D" uid="uid://x0a6mahx5cmj" path="res://assets/starmap-slides/ice-cream-1.PNG" id="8_iogy1"]
+[ext_resource type="Texture2D" uid="uid://wofjigpix7fv" path="res://assets/starmap-slides/ice-cream-2.PNG" id="9_pefxs"]
+[ext_resource type="Texture2D" uid="uid://cpn2vcg2mb7na" path="res://assets/starmap-slides/mountain-1.PNG" id="10_bn3f1"]
+[ext_resource type="Texture2D" uid="uid://cwjlkovvraefo" path="res://assets/starmap-slides/mountain-2.PNG" id="11_jsuqi"]
+[ext_resource type="Texture2D" uid="uid://ds13vwvrxmqk1" path="res://assets/starmap-slides/umbrella-1.PNG" id="12_5mvsu"]
+[ext_resource type="Texture2D" uid="uid://d1bvgnv0lyfvx" path="res://assets/starmap-slides/umbrella-2.PNG" id="13_fqn5k"]
+[ext_resource type="Texture2D" uid="uid://ct3ppleeyg2ta" path="res://assets/starmap-slides/umbrella-3.PNG" id="14_bhdrn"]
+[ext_resource type="Texture2D" uid="uid://diw5bfhurhal0" path="res://assets/starmap-slides/plane-1.PNG" id="15_84sww"]
+[ext_resource type="Texture2D" uid="uid://g4qr1rtxpi3k" path="res://assets/starmap-slides/plane-2.PNG" id="16_rsutn"]
+[ext_resource type="Texture2D" uid="uid://dk867fvhe1enn" path="res://assets/starmap-slides/plane-3.PNG" id="17_dmdkq"]
+[ext_resource type="Texture2D" uid="uid://vwrs1p3ddjyy" path="res://assets/starmap-slides/herring-1.PNG" id="18_8lpea"]
+[ext_resource type="Texture2D" uid="uid://nudttt0vid4s" path="res://assets/starmap-slides/herring-2.PNG" id="19_4gmri"]
+[ext_resource type="Texture2D" uid="uid://bwe2clj2jgund" path="res://assets/starmap-slides/herring-3.PNG" id="20_m3m3d"]
+[ext_resource type="Texture2D" uid="uid://vhcnrfcqqe2c" path="res://assets/starmap-slides/herring-4.PNG" id="21_ieif8"]
+[ext_resource type="Texture2D" uid="uid://cjopxqv2k6hey" path="res://assets/starmap-slides/herring-5.PNG" id="22_81wjq"]
+[ext_resource type="Texture2D" uid="uid://dxq8ptrf4hmqp" path="res://assets/starmap-slides/herring-6.PNG" id="23_m3cf0"]
+[ext_resource type="Texture2D" uid="uid://dx3kud56fcy15" path="res://assets/starmap-slides/herring-7.PNG" id="24_i0ic2"]
+[ext_resource type="Texture2D" uid="uid://dsaxlquvil5vp" path="res://assets/starmap-slides/herring-8.PNG" id="25_d0uno"]
+[ext_resource type="Texture2D" uid="uid://bpf2ly06e1s4e" path="res://assets/starmap/envelope.png" id="26_om3oq"]
+[ext_resource type="AudioStream" uid="uid://cfmrp13hrkq5s" path="res://assets/sfx/shimmer.wav" id="27_772cg"]
+
+[sub_resource type="Animation" id="Animation_y6hpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Herrings/Herring1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Herrings/Herring2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Herrings/Herring3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Herrings/Herring4:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Herrings/Herring5:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Herrings/Herring6:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Herrings/Herring7:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Herrings/Herring8:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a3qhn"]
+resource_name = "ending"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(960, 1620), Vector2(1920, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_e3txh"]
+resource_name = "ending_2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 4.9),
+"transitions": PackedFloat32Array(4, 4, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r605s"]
+resource_name = "quad_1_complete"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herrings/Herring1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Herrings/Herring2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 4, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v8b3t"]
+resource_name = "quad_2_complete"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herrings/Herring3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Herrings/Herring4:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4qlv1"]
+resource_name = "quad_3_complete"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herrings/Herring5:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Herrings/Herring6:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ykmr8"]
+resource_name = "quad_4_complete"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Herrings/Herring7:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Herrings/Herring8:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 4),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8e7uh"]
+_data = {
+"RESET": SubResource("Animation_y6hpj"),
+"ending": SubResource("Animation_a3qhn"),
+"ending_2": SubResource("Animation_e3txh"),
+"quad_1_complete": SubResource("Animation_r605s"),
+"quad_2_complete": SubResource("Animation_v8b3t"),
+"quad_3_complete": SubResource("Animation_4qlv1"),
+"quad_4_complete": SubResource("Animation_ykmr8")
+}
+
+[node name="Starmap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ejwod")
+
+[node name="Map" type="TextureRect" parent="."]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("2_v55mf")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
+
+[node name="Props" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="Quad1Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("3_cvnni")
+
+[node name="Open" type="Button" parent="Props/Quad1Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 725)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 537.0
+offset_bottom = 783.0
+rotation = -0.0942478
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad2Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("4_2rb1s")
+
+[node name="Open" type="Button" parent="Props/Quad2Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(317, 759)
+layout_mode = 0
+offset_left = 1424.0
+offset_top = 76.0
+offset_right = 1741.0
+offset_bottom = 835.0
+rotation = -0.10821
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad3Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("5_rtrju")
+
+[node name="Open" type="Button" parent="Props/Quad3Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(449, 473)
+layout_mode = 0
+offset_left = 70.0
+offset_top = 528.0
+offset_right = 519.0
+offset_bottom = 1001.0
+rotation = -0.10821
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Quad4Prop" type="TextureRect" parent="Props"]
+layout_mode = 2
+texture = ExtResource("6_ero65")
+
+[node name="Open" type="Button" parent="Props/Quad4Prop"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(552, 296)
+layout_mode = 0
+offset_left = 1281.0
+offset_top = 728.0
+offset_right = 1833.0
+offset_bottom = 1024.0
+rotation = -0.10472
+mouse_default_cursor_shape = 2
+text = "TEST"
+
+[node name="Herrings" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Herring1" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(1587, 844)
+texture = ExtResource("18_8lpea")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring2" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(1443, 377)
+texture = ExtResource("19_4gmri")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring3" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(2475, 339)
+texture = ExtResource("20_m3m3d")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring4" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(2137, 884)
+texture = ExtResource("21_ieif8")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring5" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(1422, 1808)
+texture = ExtResource("22_81wjq")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring6" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(724, 1410)
+texture = ExtResource("23_m3cf0")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring7" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(2776, 1294)
+texture = ExtResource("24_i0ic2")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Herring8" parent="Herrings" instance=ExtResource("7_miln0")]
+position = Vector2(2961, 1809)
+texture = ExtResource("25_d0uno")
+correct_position = Vector2(-9999, -9999)
+correct_rotation = -1
+
+[node name="Slides" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Quad1Slides" type="Control" parent="Slides"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Slide1" parent="Slides/Quad1Slides" instance=ExtResource("7_miln0")]
+position = Vector2(1658, 217)
+texture = ExtResource("8_iogy1")
+correct_position = Vector2(798, 549)
+quadrant = 1
+
+[node name="Slide2" parent="Slides/Quad1Slides" instance=ExtResource("7_miln0")]
+position = Vector2(784, 199)
+texture = ExtResource("9_pefxs")
+correct_position = Vector2(1187, 702)
+quadrant = 1
+
+[node name="Quad2Slides" type="Control" parent="Slides"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Slide1" parent="Slides/Quad2Slides" instance=ExtResource("7_miln0")]
+position = Vector2(3394, 792)
+texture = ExtResource("10_bn3f1")
+correct_position = Vector2(2354, 649)
+quadrant = 2
+
+[node name="Slide2" parent="Slides/Quad2Slides" instance=ExtResource("7_miln0")]
+position = Vector2(2684, 248)
+texture = ExtResource("11_jsuqi")
+correct_position = Vector2(3153, 868)
+quadrant = 2
+
+[node name="Quad3Slides" type="Control" parent="Slides"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Slide1" parent="Slides/Quad3Slides" instance=ExtResource("7_miln0")]
+position = Vector2(872, 1913)
+texture = ExtResource("12_5mvsu")
+correct_position = Vector2(700, 1501)
+correct_rotation = 3
+quadrant = 3
+
+[node name="Slide2" parent="Slides/Quad3Slides" instance=ExtResource("7_miln0")]
+position = Vector2(263, 1338)
+texture = ExtResource("13_fqn5k")
+correct_position = Vector2(906, 1507)
+quadrant = 3
+
+[node name="Slide3" parent="Slides/Quad3Slides" instance=ExtResource("7_miln0")]
+position = Vector2(1612, 1352)
+texture = ExtResource("14_bhdrn")
+correct_position = Vector2(1073, 1840)
+quadrant = 3
+
+[node name="Quad4Slides" type="Control" parent="Slides"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Slide1" parent="Slides/Quad4Slides" instance=ExtResource("7_miln0")]
+position = Vector2(2364, 1944)
+texture = ExtResource("15_84sww")
+correct_position = Vector2(2582, 1171)
+quadrant = 4
+
+[node name="Slide2" parent="Slides/Quad4Slides" instance=ExtResource("7_miln0")]
+position = Vector2(3425, 1384)
+texture = ExtResource("16_rsutn")
+correct_position = Vector2(2976, 1204)
+quadrant = 4
+
+[node name="Slide3" parent="Slides/Quad4Slides" instance=ExtResource("7_miln0")]
+position = Vector2(2208, 1556)
+texture = ExtResource("17_dmdkq")
+correct_position = Vector2(3083, 1606)
+quadrant = 4
+
+[node name="IntroLetter" type="TextureButton" parent="."]
+z_index = 20
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("26_om3oq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8e7uh")
+}
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_772cg")
+volume_db = -10.0
+
+[connection signal="pressed" from="Props/Quad1Prop/Open" to="." method="_on_prop_1_pressed"]
+[connection signal="pressed" from="Props/Quad2Prop/Open" to="." method="_on_prop_2_pressed"]
+[connection signal="pressed" from="Props/Quad3Prop/Open" to="." method="_on_prop_3_pressed"]
+[connection signal="pressed" from="Props/Quad4Prop/Open" to="." method="_on_prop_4_pressed"]
+[connection signal="pressed" from="IntroLetter" to="." method="_on_intro_letter_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

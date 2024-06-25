@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=3 format=3 uid="uid://dv7hqaphqwui4"]
+
+[ext_resource type="Texture2D" uid="uid://bj788sky7snvd" path="res://assets/starmap/brochure.png" id="1_jr2gu"]
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="2_rsa2t"]
+
+[resource]
+script = ExtResource("2_rsa2t")
+image = ExtResource("1_jr2gu")
+title = ""
+description = "I think he was just happy that we’d found our own way to love the stars as much as he did."

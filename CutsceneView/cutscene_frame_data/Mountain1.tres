@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CutsceneFrameData" load_steps=4 format=3 uid="uid://drgblu27oguls"]
+
+[ext_resource type="Script" path="res://CutsceneView/CutsceneFrameData.resource.gd" id="1_0drrw"]
+[ext_resource type="Texture2D" uid="uid://bj788sky7snvd" path="res://assets/starmap/brochure.png" id="1_uqbms"]
+[ext_resource type="AudioStream" uid="uid://bbx30v7xodbwq" path="res://assets/sfx/page-3.mp3" id="3_l6jj0"]
+
+[resource]
+script = ExtResource("1_0drrw")
+image = ExtResource("1_uqbms")
+title = ""
+description = "Dad gave up on trying to teach us the real constellations."
+sound_effect = ExtResource("3_l6jj0")
